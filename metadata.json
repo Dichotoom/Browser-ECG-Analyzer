@@ -1,0 +1,5 @@
+{
+  "name": "Browser ECG Analyzer",
+  "description": "A privacy-first ECG analysis dashboard designed to help General Practitioners.",
+  "requestFramePermissions": []
+}
