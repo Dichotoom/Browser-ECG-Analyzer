@@ -5,7 +5,7 @@ A **privacy-preserving, client-side application** for clinical-grade ECG signal 
 ## Architecture
 
 The application runs entirely in the browser. When loaded for the first time, the Pyodide
-runtime, NumPy and SciPy (~10 MB) are downloaded from CDN. After this one-time installation, all operations are performed locally without server communication.
+runtime, NumPy and SciPy (~10 MB) are downloaded from CDN. After this one-time setup, all operations are performed locally without server communication.
 
 ## Core Algorithms
 
@@ -15,14 +15,14 @@ runtime, NumPy and SciPy (~10 MB) are downloaded from CDN. After this one-time i
 - **Heart Rate Variability (HRV)**  
   Automated calculation of **SDNN, RMSSD, and pNN50 metrics** with artifact rejection.
 
-- **QRS Morphology** 
-  Duration measurement via slope-based onset/offset detection
+- **QRS Morphology**  
+  Duration measurement via slope-based onset/offset detection.
 
-- **QTc Interval**
-  Bazett correction via tangent method T-wave offset detection
+- **QTc Interval**  
+  Bazett correction via tangent method T-wave offset detection.
 
-- **Rhythm Classification**
-  Coefficient of variation threshold with hierarchical rate-based classification
+- **Rhythm Classification**  
+  Coefficient of variation threshold with hierarchical rate-based classification.
 
 ## Quick Start
 
