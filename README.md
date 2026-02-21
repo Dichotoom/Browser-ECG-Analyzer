@@ -9,6 +9,8 @@ runtime, NumPy and SciPy (~10 MB) are downloaded from CDN. After this one-time s
 
 ## Core Algorithms
 
+All algorithms use **validated SciPy implementations** via Pyodide, avoiding JavaScript reimplementation and potential numerical errors.
+
 - **Pan-Tompkins QRS Detection**  
   Implements the reference 1985 algorithm with **adaptive thresholding** and **five-point differentiation**.
 
@@ -38,12 +40,19 @@ Upload an ECG recording (`.csv` or `.xml`). The system will parse the file, run 
 
 ## Validation
 
-Validated against MIT-BIH Arrhythmia Database Record 119 using WFDB annotations.
+Validated against MIT-BIH Arrhythmia Database using WFDB reference annotations (100ms tolerance, filtered for valid beat symbols).
 
-| Metric | Result |
-|--------|--------|
-| Sensitivity | 94.89% |
-| Positive Predictive Value | 99.95% |
+**Multi-record validation (n=6):**
+
+| Record | Sensitivity | PPV |
+|--------|------------|-----|
+| 105 | 98.56% | 96.57% |
+| 108 | 84.52% | 95.39% |
+| 102 | 100.00% | 100.00% |
+| 119 | 100.00% | 99.95% |
+| 203 | 89.16% | 97.72% |
+| 223 | 99.50% | 100.00% |
+| **Global** | **95.42%** | **98.35%** |
 
 ## Disclaimer
 
