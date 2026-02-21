@@ -105,14 +105,8 @@ const ECGDisplay: React.FC<ECGDisplayProps> = ({ data }) => {
               dataKey="clean" 
               stroke="#005EB8" 
               strokeWidth={1.5} 
-              dot={false} 
               isAnimationActive={true}
               name="clean"
-            />
-            <Line 
-              type="monotone"
-              dataKey="clean"
-              stroke="transparent"
               dot={(props) => {
                  const { cx, cy, index } = props;
                  if (data[index]?.isPeak) {
@@ -122,10 +116,9 @@ const ECGDisplay: React.FC<ECGDisplayProps> = ({ data }) => {
                      </g>
                    );
                  }
-                 return <></>;
+                 return <React.Fragment key={index}></React.Fragment>;
               }}
               activeDot={false}
-              isAnimationActive={false}
             />
           </LineChart>
         </ResponsiveContainer>
